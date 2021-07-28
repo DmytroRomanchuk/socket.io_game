@@ -51,6 +51,7 @@ class Game {
 			options.assets.push(`${game.assetsPath}fbx/anims/${anim}.fbx`)
 		});
 		options.assets.push(`${game.assetsPath}fbx/town.fbx`);
+		console.log(options)
 
 		this.mode = this.modes.PRELOAD;
 
@@ -455,6 +456,7 @@ class Player {
 				object.traverse(child => {
 					if (child.isMesh) {
 						child.material.map = texture;
+						child.material.map.needsUpdate = true;
 					}
 				});
 			});
