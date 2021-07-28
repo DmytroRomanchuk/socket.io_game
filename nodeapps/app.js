@@ -3,6 +3,8 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
+const port = 7654;
+
 app.use(express.static('../public_html/'));
 app.use(express.static('../public_html/libs'));
 app.get('/', (req, res) => {
@@ -59,7 +61,7 @@ io.sockets.on('connection', socket => {
 });
 
 http.listen(7654, () => {
-	console.log('listening on *:7000');
+	console.log(`listening on *:${port}`);
 });
 
 setInterval(() => {
