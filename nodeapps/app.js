@@ -58,7 +58,7 @@ io.sockets.on('connection', socket => {
 	})
 });
 
-http.listen(7000, () => {
+http.listen(7654, () => {
 	console.log('listening on *:7000');
 });
 
